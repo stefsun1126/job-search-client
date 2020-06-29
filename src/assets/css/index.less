@@ -1,0 +1,47 @@
+// 錯誤訊息顯示位置
+.error-msg {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+}
+
+// 固定主頁面子路由的 nav-foot 位置
+// 覆寫 antd style , 因為不給附加 
+.am-tab-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    // 包裹內容
+    // 繼承父容器高度 , 而父容器是依據子元素撐高 , 所以這裡就是內容多高就多高
+    height: inherit;
+    // 層級提高 不讓別的視窗擋到
+    z-index: 1;
+}
+
+// 固定主頁Hender
+.sticky-am-header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+// chat 顯示本人的extra寬度跟內容一致
+#chat-page .chat-me .am-list-extra {
+    // 寬度跟內容一致
+    flex-basis: auto;
+}
+
+// chat 聊天內容本人部分靠右
+#chat-page .chat-me .am-list-content {
+    padding-right: 15px;
+    text-align: right;
+}
+
+// 大螢幕讓中間區往中間集中
+.am-list-body {
+    @media (min-width : 768px) {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
